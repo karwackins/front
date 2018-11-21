@@ -10683,15 +10683,43 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{"process":"node_modules/process/browser.js"}],"index.js":[function(require,module,exports) {
+},{"process":"node_modules/process/browser.js"}],"math.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.plus = plus;
+exports.minus = minus;
+exports.default = pow;
+
+function plus(a, b) {
+  return a + b;
+}
+
+function minus(a, b) {
+  return a - b;
+}
+
+function pow(a, b) {
+  return Math.pow(a, b);
+}
+},{}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _jquery = _interopRequireDefault(require("jquery"));
 
+var _math = _interopRequireWildcard(require("./math"));
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _jquery.default)('#app').empty().append('<h1>P1</h1>');
-},{"jquery":"node_modules/jquery/dist/jquery.js"}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+(0, _jquery.default)('#app').empty().append('<h1>Pssssssw</h1>');
+console.log("math", _math.default);
+console.log((0, _math.minus)(2, 1));
+console.log((0, _math.plus)(2, 1));
+},{"jquery":"node_modules/jquery/dist/jquery.js","./math":"math.js"}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -10718,7 +10746,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36539" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42677" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
